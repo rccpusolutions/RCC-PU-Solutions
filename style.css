@@ -1,3 +1,4 @@
+/* ======================== */
 /* RESET */
 * {
     margin: 0;
@@ -10,6 +11,7 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
+/* ======================== */
 /* FIXED HEADER */
 header {
     display: flex;
@@ -70,7 +72,8 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* HERO SECTION FULL PAGE */
+/* ======================== */
+/* HOME PAGE HERO SECTION */
 .home-main {
     height: calc(100vh - 80px);
     background-image: url('home-bg.jpg');
@@ -96,7 +99,7 @@ nav a:hover {
     left: 0;
 }
 
-/* TEXT CONTENT */
+/* HERO TEXT CONTENT */
 .hero-content {
     text-align: center;
     color: white;
@@ -137,20 +140,71 @@ footer {
     color: white;
 }
 
-/* ========================= */
-/* 📱 MOBILE FIX (IMPORTANT) */
-/* ========================= */
+/* ======================== */
+/* ABOUT US PAGE - FULL SCREEN SECTIONS */
+.about-section {
+    height: 100vh; /* full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+    background-color: #ffffff;
+}
 
+/* Alternate background for second section */
+.about-section.alt {
+    background-color: #f4f4f4;
+}
+
+/* Content container */
+.about-content {
+    max-width: 800px;
+}
+
+.about-content h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #004d00;
+}
+
+.about-content h2 {
+    margin-top: 20px;
+    color: #00a651;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* List styling */
+.about-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-content ul li {
+    background-color: #e0f2e9;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* ======================== */
+/* MOBILE FIX */
 @media (max-width: 768px) {
 
-    /* Header becomes vertical */
+    /* Header stacked */
     header {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
-    /* Center logo + name */
+    /* Logo + name center */
     .header-left {
         justify-content: center;
         margin-bottom: 5px;
@@ -160,12 +214,12 @@ footer {
         font-size: 20px;
     }
 
-    /* MENU BELOW LOGO (HORIZONTAL) */
+    /* Menu horizontal below logo */
     nav {
         width: 100%;
         display: flex;
         justify-content: center;
-        flex-wrap: wrap; /* allows wrap if needed */
+        flex-wrap: wrap;
     }
 
     nav a {
@@ -173,7 +227,7 @@ footer {
         font-size: 14px;
     }
 
-    /* HERO TEXT ADJUST */
+    /* HERO TEXT */
     .hero-content h1 {
         font-size: 30px;
     }
@@ -187,8 +241,22 @@ footer {
         font-size: 16px;
     }
 
-    /* Adjust spacing for fixed header */
+    /* Adjust padding for fixed header */
     body {
         padding-top: 100px;
+    }
+
+    /* ABOUT PAGE sections auto height */
+    .about-section {
+        height: auto;
+        padding: 60px 20px;
+    }
+
+    .about-content h1 {
+        font-size: 28px;
+    }
+
+    .about-content p {
+        font-size: 16px;
     }
 }
