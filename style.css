@@ -70,20 +70,21 @@ nav a:hover {
 }
 
 /* ======================== */
-/* HOME HERO SECTION */
-.home-main {
-    height: calc(100vh - 80px);
+/* HOME PAGE HERO */
+.hero-section.home-bg {
     background-image: url('home-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     position: relative;
 }
 
-.home-main::before {
+.hero-section.home-bg::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -93,59 +94,58 @@ nav a:hover {
     left: 0;
 }
 
-.hero-content {
-    text-align: center;
+.hero-section.home-bg .hero-content {
+    position: relative;
     z-index: 1;
+    max-width: 900px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
 }
 
-.hero-content h1 {
-    font-size: 50px;
+.hero-section.home-bg h1 {
+    font-size: 40px;
     margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
 }
 
-.hero-content p {
-    font-size: 22px;
-    margin-bottom: 30px;
+.hero-section.home-bg p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
 }
 
-.button {
+.hero-section.home-bg a {
     display: inline-block;
+    padding: 12px 25px;
     background-color: #00a651;
     color: white;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 5px;
     text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
     transition: 0.3s;
 }
 
-.button:hover {
+.hero-section.home-bg a:hover {
     background-color: #004d00;
 }
 
 /* ======================== */
-/* ABOUT US SECTIONS */
-.hero-section {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    background-color: #ffffff;
-    position: relative;
-}
-
-.hero-section.alt {
-    background-color: #f4f4f4;
-}
-
 /* COMPANY BACKGROUND */
 .hero-section.company-bg {
     background-image: url('company-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
 }
 
 .hero-section.company-bg::before {
@@ -153,7 +153,7 @@ nav a:hover {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(255,255,255,0.7);
     top: 0;
     left: 0;
 }
@@ -161,15 +161,25 @@ nav a:hover {
 .hero-section.company-bg .hero-content {
     position: relative;
     z-index: 1;
-    color: white;
+    max-width: 900px;
+    color: #004d00;
+    font-weight: bold;
+    text-align: center;
 }
 
-/* MISSION & VISION */
+/* ======================== */
+/* MISSION/VISION */
 .hero-section.mission-bg {
     background-image: url('mission-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
 }
 
 .hero-section.mission-bg::before {
@@ -177,7 +187,7 @@ nav a:hover {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(255,255,255,0.7);
     top: 0;
     left: 0;
 }
@@ -185,24 +195,70 @@ nav a:hover {
 .hero-section.mission-bg .hero-content {
     position: relative;
     z-index: 1;
-    color: white;
-}
-
-/* HERO CONTENT COMMON */
-.hero-section .hero-content {
     max-width: 900px;
+    color: #004d00;
+    font-weight: bold;
+    text-align: center;
 }
 
+/* ======================== */
+/* WHY CHOOSE US */
+.hero-section.chooseus-bg {
+    background-image: url('chooseus-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-section.chooseus-bg::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.7);
+    top: 0;
+    left: 0;
+}
+
+.hero-section.chooseus-bg .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    color: #004d00;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hero-section.chooseus-bg .hero-content::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 5px;
+    background-color: #00a651;
+    margin: 20px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* COMMON HERO TEXT */
 .hero-section h1 {
     font-size: 40px;
     margin-bottom: 20px;
     color: #004d00;
+    font-weight: bold;
 }
 
 .hero-section p {
     font-size: 20px;
     line-height: 1.6;
     margin-bottom: 20px;
+    color: #004d00;
+    font-weight: bold;
 }
 
 .hero-section ul {
@@ -211,25 +267,25 @@ nav a:hover {
 }
 
 .hero-section ul li {
-    background-color: #e0f2e9;
+    background-color: rgba(0,166,81,0.1);
     margin: 10px 0;
     padding: 12px;
     border-radius: 5px;
     font-weight: bold;
+    color: #004d00;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #00a651;
+    background-color: #004d00;
     color: white;
 }
 
 /* ======================== */
-/* MOBILE FIX */
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
-
     header {
         flex-direction: column;
         align-items: center;
@@ -261,12 +317,8 @@ footer {
         font-size: 30px;
     }
 
-    .hero-content p {
-        font-size: 16px;
-    }
-
-    .button {
-        padding: 12px 25px;
+    .hero-content p,
+    .hero-section ul li {
         font-size: 16px;
     }
 
@@ -281,10 +333,5 @@ footer {
 
     .hero-section h1 {
         font-size: 28px;
-    }
-
-    .hero-section p, 
-    .hero-section ul li {
-        font-size: 16px;
     }
 }
