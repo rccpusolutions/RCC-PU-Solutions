@@ -1,28 +1,27 @@
-/* Reset */
+/* Reset and body */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+body, html {
+    height: 100%;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #ffffff;
-    color: #004d00;
 }
 
 /* Header */
 header {
     display: flex;
-    justify-content: space-between; /* logo left, menu right */
+    justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #ffffff; /* white header */
+    background-color: #ffffff;
     border-bottom: 2px solid #00a651;
+    z-index: 2;
+    position: relative;
 }
 
-/* Logo + Company Name */
 .header-left {
     display: flex;
     align-items: center;
@@ -36,12 +35,11 @@ header {
 .company-name {
     font-size: 24px;
     font-weight: bold;
-    color: #004d00; /* dark green */
+    color: #004d00;
 }
 
-/* Menu links */
 nav a {
-    color: #00a651; /* green text */
+    color: #00a651;
     text-decoration: none;
     margin-left: 20px;
     font-weight: bold;
@@ -54,22 +52,20 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Home page main section background */
+/* Home page full-screen hero */
 .home-main {
-    padding: 100px 20px;
-    max-width: 900px;
-    margin: 50px auto;
-    text-align: center;
-    color: white; /* text color white */
-    background-image: url('home-bg.jpg'); /* background image */
-    background-size: cover; /* cover full area */
+    height: calc(100vh - 72px); /* full viewport minus header height */
+    background-image: url('home-bg.jpg');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
 }
 
-/* Optional overlay for better readability */
+/* Optional overlay for readability */
 .home-main::before {
     content: "";
     position: absolute;
@@ -77,14 +73,25 @@ nav a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.4); /* semi-transparent black overlay */
+    background-color: rgba(0,0,0,0.4); /* dark overlay */
     z-index: 0;
-    border-radius: 10px;
 }
 
-.home-main * {
-    position: relative;
-    z-index: 1; /* text stays on top */
+/* Hero content */
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 1; /* above overlay */
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 24px;
+    margin-bottom: 30px;
 }
 
 /* Buttons */
@@ -92,10 +99,10 @@ nav a:hover {
     display: inline-block;
     background-color: #00a651;
     color: white;
-    padding: 10px 20px;
-    margin-top: 15px;
-    text-decoration: none;
+    padding: 15px 30px;
+    font-size: 18px;
     border-radius: 5px;
+    text-decoration: none;
     transition: background 0.3s;
 }
 
@@ -109,7 +116,6 @@ footer {
     padding: 20px;
     background-color: #00a651;
     color: white;
-    margin-top: 50px;
 }
 
 /* Responsive */
@@ -127,8 +133,14 @@ footer {
     nav a {
         margin: 5px 0;
     }
-    .home-main {
-        padding: 80px 10px;
-        margin: 20px auto;
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    .hero-content p {
+        font-size: 18px;
+    }
+    .button {
+        padding: 12px 25px;
+        font-size: 16px;
     }
 }
