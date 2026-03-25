@@ -1,4 +1,4 @@
-/* Reset & Base */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -15,40 +15,43 @@ body {
 /* Header */
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* logo left, menu right */
     align-items: center;
     padding: 10px 20px;
     background-color: #ffffff; /* white header */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     border-bottom: 2px solid #00a651;
 }
 
-header .logo img {
+/* Logo + Company Name */
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left img {
     height: 50px;
+    margin-right: 10px;
 }
 
-/* Navigation menu */
-header nav {
-    background-color: #00a651; /* green menu */
-    border-radius: 5px;
-    padding: 5px 10px;
+.company-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #004d00; /* dark green */
 }
 
-header nav a {
-    color: white;
+/* Menu links */
+nav a {
+    color: #00a651; /* green text */
     text-decoration: none;
-    margin-left: 15px;
+    margin-left: 20px;
     font-weight: bold;
     font-size: 16px;
-    padding: 5px 10px;
-    transition: background 0.3s, border-radius 0.3s;
+    transition: color 0.3s;
 }
 
-header nav a:hover {
-    background-color: #004d00;
-    border-radius: 5px;
+nav a:hover {
+    color: #004d00;
+    text-decoration: underline;
 }
 
 /* Main content */
@@ -56,10 +59,10 @@ main {
     padding: 50px 20px;
     max-width: 900px;
     margin: auto;
+    text-align: center;
 }
 
 h1, h2 {
-    text-align: center;
     margin-bottom: 20px;
 }
 
@@ -108,12 +111,13 @@ footer {
         flex-direction: column;
         align-items: flex-start;
     }
-    header nav {
+    nav {
         width: 100%;
         margin-top: 10px;
+        display: flex;
+        flex-direction: column;
     }
-    header nav a {
-        display: block;
+    nav a {
         margin: 5px 0;
     }
 }
