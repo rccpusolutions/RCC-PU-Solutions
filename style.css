@@ -50,7 +50,12 @@ body {
     color: #004d00;
 }
 
-/* MENU */
+/* MENU (DESKTOP) */
+nav {
+    display: flex;
+    align-items: center;
+}
+
 nav a {
     color: #00a651;
     text-decoration: none;
@@ -132,34 +137,58 @@ footer {
     color: white;
 }
 
-/* RESPONSIVE */
+/* ========================= */
+/* 📱 MOBILE FIX (IMPORTANT) */
+/* ========================= */
+
 @media (max-width: 768px) {
+
+    /* Header becomes vertical */
     header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
     }
 
+    /* Center logo + name */
+    .header-left {
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .company-name {
+        font-size: 20px;
+    }
+
+    /* MENU BELOW LOGO (HORIZONTAL) */
     nav {
         width: 100%;
-        margin-top: 10px;
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap; /* allows wrap if needed */
     }
 
     nav a {
-        margin: 5px 0;
+        margin: 5px 10px;
+        font-size: 14px;
     }
 
+    /* HERO TEXT ADJUST */
     .hero-content h1 {
-        font-size: 32px;
+        font-size: 30px;
     }
 
     .hero-content p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .button {
         padding: 12px 25px;
         font-size: 16px;
+    }
+
+    /* Adjust spacing for fixed header */
+    body {
+        padding-top: 100px;
     }
 }
