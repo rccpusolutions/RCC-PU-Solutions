@@ -70,8 +70,74 @@ nav a:hover {
 }
 
 /* ======================== */
-/* HERO SECTION COMMON */
-.hero-section {
+/* HOME PAGE HERO */
+.hero-section.home-bg {
+    background-image: url('home-bg.jpg'); /* your uploaded image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-section.home-bg::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); /* overlay for readability */
+    top: 0;
+    left: 0;
+}
+
+.hero-section.home-bg .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hero-section.home-bg h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.hero-section.home-bg p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.hero-section.home-bg a {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #00a651;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.hero-section.home-bg a:hover {
+    background-color: #004d00;
+}
+
+/* ======================== */
+/* ABOUT US SECTIONS */
+.hero-section.company-bg,
+.hero-section.mission-bg,
+.hero-section.chooseus-bg {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -82,18 +148,19 @@ nav a:hover {
     background-color: #ffffff; /* white background */
 }
 
-/* HERO CONTENT COMMON */
-.hero-section .hero-content {
+.hero-section.company-bg .hero-content,
+.hero-section.mission-bg .hero-content,
+.hero-section.chooseus-bg .hero-content {
     max-width: 900px;
     color: #004d00; /* solid green text */
-    font-weight: bold; /* bold text */
+    font-weight: bold;
     text-align: center;
 }
 
 .hero-section h1 {
     font-size: 40px;
     margin-bottom: 20px;
-    color: #004d00; /* solid green headings */
+    color: #004d00;
     font-weight: bold;
 }
 
@@ -101,7 +168,7 @@ nav a:hover {
     font-size: 20px;
     line-height: 1.6;
     margin-bottom: 20px;
-    color: #004d00; /* solid green paragraphs */
+    color: #004d00;
     font-weight: bold;
 }
 
@@ -116,17 +183,17 @@ nav a:hover {
     padding: 12px;
     border-radius: 5px;
     font-weight: bold;
-    color: #004d00; /* solid green text */
+    color: #004d00;
 }
 
 /* GREEN BAR UNDER "Why Choose Us" */
 .hero-section.chooseus-bg .hero-content::after {
     content: "";
     display: block;
-    width: 100px; /* width of the bar */
-    height: 5px;  /* thickness */
-    background-color: #00a651; /* green bar */
-    margin: 20px auto 0 auto; /* center below content */
+    width: 100px;
+    height: 5px;
+    background-color: #00a651;
+    margin: 20px auto 0 auto;
     border-radius: 2px;
 }
 
@@ -134,7 +201,7 @@ nav a:hover {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #004d00; /* dark green footer */
+    background-color: #004d00;
     color: white;
 }
 
