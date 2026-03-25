@@ -1,28 +1,18 @@
-/* Base Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Reset & Base */
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     background-color: #ffffff;
-    color: #004d00; /* Dark Green */
+    color: #004d00;  /* dark green text */
 }
 
-/* Header */
 header {
-    background-color: #00a651; /* Bright Green */
+    background-color: #00a651; /* bright green header */
     color: white;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
 header img {
@@ -35,16 +25,12 @@ header nav a {
     margin-left: 20px;
     font-weight: bold;
     font-size: 16px;
-    padding: 5px 10px;
-    transition: background 0.3s, border-radius 0.3s;
 }
 
 header nav a:hover {
-    background-color: #004d00;
-    border-radius: 5px;
+    text-decoration: underline;
 }
 
-/* Main Section */
 main {
     padding: 50px 20px;
     max-width: 900px;
@@ -52,58 +38,27 @@ main {
 }
 
 h1, h2 {
+    color: #004d00;
     text-align: center;
-    margin-bottom: 20px;
 }
 
-/* Buttons */
-.button {
-    display: inline-block;
-    background-color: #00a651;
-    color: white;
-    padding: 10px 20px;
-    margin-top: 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.button:hover {
-    background-color: #004d00;
-}
-
-/* Lists */
 ul {
     list-style: none;
     padding: 0;
 }
 
 ul li {
-    background-color: #e0f2e9; /* Light green box */
+    background-color: #e0f2e9; /* light green box */
     margin: 10px 0;
     padding: 10px;
     border-radius: 5px;
     font-weight: bold;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 20px;
     background-color: #00a651;
     color: white;
     margin-top: 50px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-    }
-    header nav {
-        margin-top: 10px;
-    }
-    header nav a {
-        margin: 5px 10px;
-    }
 }
