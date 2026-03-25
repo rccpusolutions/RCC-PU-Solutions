@@ -28,9 +28,8 @@ header {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* SPACE BELOW HEADER */
 body {
-    padding-top: 80px;
+    padding-top: 80px; /* space for fixed header */
 }
 
 /* LOGO + NAME */
@@ -71,7 +70,7 @@ nav a:hover {
 }
 
 /* ======================== */
-/* HOME PAGE HERO SECTION */
+/* HOME HERO SECTION */
 .home-main {
     height: calc(100vh - 80px);
     background-image: url('home-bg.jpg');
@@ -96,7 +95,6 @@ nav a:hover {
 
 .hero-content {
     text-align: center;
-    color: white;
     z-index: 1;
 }
 
@@ -142,7 +140,7 @@ nav a:hover {
     background-color: #f4f4f4;
 }
 
-/* COMPANY BACKGROUND BACKGROUND IMAGE */
+/* COMPANY BACKGROUND */
 .hero-section.company-bg {
     background-image: url('company-bg.jpg');
     background-size: cover;
@@ -166,6 +164,31 @@ nav a:hover {
     color: white;
 }
 
+/* MISSION & VISION */
+.hero-section.mission-bg {
+    background-image: url('mission-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-section.mission-bg::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    top: 0;
+    left: 0;
+}
+
+.hero-section.mission-bg .hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+/* HERO CONTENT COMMON */
 .hero-section .hero-content {
     max-width: 900px;
 }
@@ -195,7 +218,6 @@ nav a:hover {
     font-weight: bold;
 }
 
-/* ======================== */
 /* FOOTER */
 footer {
     text-align: center;
