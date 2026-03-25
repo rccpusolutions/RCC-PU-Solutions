@@ -70,61 +70,7 @@ nav a:hover {
 }
 
 /* ======================== */
-/* HOME HERO SECTION */
-.home-main {
-    height: calc(100vh - 80px);
-    background-image: url('home-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.home-main::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    top: 0;
-    left: 0;
-}
-
-.hero-content {
-    text-align: center;
-    z-index: 1;
-}
-
-.hero-content h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    font-size: 22px;
-    margin-bottom: 30px;
-}
-
-.button {
-    display: inline-block;
-    background-color: #00a651;
-    color: white;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.button:hover {
-    background-color: #004d00;
-}
-
-/* ======================== */
-/* ABOUT US SECTIONS */
+/* HERO SECTION COMMON */
 .hero-section {
     height: 100vh;
     display: flex;
@@ -132,12 +78,7 @@ nav a:hover {
     align-items: center;
     text-align: center;
     padding: 20px;
-    background-color: #ffffff;
     position: relative;
-}
-
-.hero-section.alt {
-    background-color: #f4f4f4;
 }
 
 /* COMPANY BACKGROUND */
@@ -188,7 +129,31 @@ nav a:hover {
     color: white;
 }
 
-/* HERO CONTENT COMMON */
+/* WHY CHOOSE US */
+.hero-section.chooseus-bg {
+    background-image: url('chooseus-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-section.chooseus-bg::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    top: 0;
+    left: 0;
+}
+
+.hero-section.chooseus-bg .hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+/* HERO CONTENT */
 .hero-section .hero-content {
     max-width: 900px;
 }
@@ -211,7 +176,7 @@ nav a:hover {
 }
 
 .hero-section ul li {
-    background-color: #e0f2e9;
+    background-color: rgba(224,242,233,0.8);
     margin: 10px 0;
     padding: 12px;
     border-radius: 5px;
@@ -261,12 +226,8 @@ footer {
         font-size: 30px;
     }
 
-    .hero-content p {
-        font-size: 16px;
-    }
-
-    .button {
-        padding: 12px 25px;
+    .hero-content p,
+    .hero-section ul li {
         font-size: 16px;
     }
 
@@ -281,10 +242,5 @@ footer {
 
     .hero-section h1 {
         font-size: 28px;
-    }
-
-    .hero-section p, 
-    .hero-section ul li {
-        font-size: 16px;
     }
 }
