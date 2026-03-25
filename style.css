@@ -70,15 +70,64 @@ nav a:hover {
 }
 
 /* ======================== */
-/* HERO SECTION COMMON */
+/* HERO SECTIONS */
 .hero-section {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
     position: relative;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.hero-section .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* HOME PAGE */
+.hero-section.home-bg {
+    background-image: url('home-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-section.home-bg::before {
+    background-color: rgba(0,0,0,0.4);
+}
+
+.hero-section.home-bg h1,
+.hero-section.home-bg p {
+    color: white;
+}
+
+.hero-section.home-bg a {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #00a651;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.hero-section.home-bg a:hover {
+    background-color: #004d00;
 }
 
 /* COMPANY BACKGROUND */
@@ -90,22 +139,15 @@ nav a:hover {
 }
 
 .hero-section.company-bg::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    top: 0;
-    left: 0;
+    background-color: rgba(255,255,255,0.7);
 }
 
-.hero-section.company-bg .hero-content {
-    position: relative;
-    z-index: 1;
-    color: white;
+.hero-section.company-bg h1,
+.hero-section.company-bg p {
+    color: #004d00;
 }
 
-/* MISSION & VISION */
+/* MISSION/VISION */
 .hero-section.mission-bg {
     background-image: url('mission-bg.jpg');
     background-size: cover;
@@ -114,19 +156,12 @@ nav a:hover {
 }
 
 .hero-section.mission-bg::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    top: 0;
-    left: 0;
+    background-color: rgba(255,255,255,0.7);
 }
 
-.hero-section.mission-bg .hero-content {
-    position: relative;
-    z-index: 1;
-    color: white;
+.hero-section.mission-bg h1,
+.hero-section.mission-bg p {
+    color: #004d00;
 }
 
 /* WHY CHOOSE US */
@@ -138,36 +173,23 @@ nav a:hover {
 }
 
 .hero-section.chooseus-bg::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    top: 0;
-    left: 0;
+    background-color: rgba(255,255,255,0.7);
 }
 
-.hero-section.chooseus-bg .hero-content {
-    position: relative;
-    z-index: 1;
-    color: white;
-}
-
-/* HERO CONTENT */
-.hero-section .hero-content {
-    max-width: 900px;
-}
-
-.hero-section h1 {
-    font-size: 40px;
-    margin-bottom: 20px;
+.hero-section.chooseus-bg h1,
+.hero-section.chooseus-bg p,
+.hero-section.chooseus-bg ul li {
     color: #004d00;
 }
 
-.hero-section p {
-    font-size: 20px;
-    line-height: 1.6;
-    margin-bottom: 20px;
+.hero-section.chooseus-bg .hero-content::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 5px;
+    background-color: #00a651;
+    margin: 20px auto 0 auto;
+    border-radius: 2px;
 }
 
 .hero-section ul {
@@ -176,25 +198,23 @@ nav a:hover {
 }
 
 .hero-section ul li {
-    background-color: rgba(224,242,233,0.8);
+    background-color: rgba(0,166,81,0.1);
     margin: 10px 0;
     padding: 12px;
     border-radius: 5px;
-    font-weight: bold;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #00a651;
+    background-color: #004d00;
     color: white;
 }
 
 /* ======================== */
-/* MOBILE FIX */
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
-
     header {
         flex-direction: column;
         align-items: center;
