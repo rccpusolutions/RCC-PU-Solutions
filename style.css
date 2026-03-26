@@ -43,7 +43,7 @@ nav a {
 }
 
 /* ============================================================ */
-/* 3. HERO & BACKGROUND LOGIC */
+/* 3. HERO & BACKGROUND LOGIC (LOCKED) */
 /* ============================================================ */
 .home-main, .hero-section, .services-bg, .pu-overview-bg, 
 .company-bg, .mission-bg, .chooseus-bg, .coldstorage-bg, 
@@ -78,7 +78,7 @@ nav a {
 .hero-content p { font-size: 20px; margin-bottom: 30px; color: white !important; }
 
 /* ============================================================ */
-/* 4. BACKGROUND IMAGE ASSIGNMENTS */
+/* 4. BACKGROUND IMAGE ASSIGNMENTS (LOCKED) */
 /* ============================================================ */
 .home-main { background-image: url('home-bg.jpg') !important; }
 .services-bg { background-image: url('services-bg.jpg') !important; }
@@ -86,19 +86,39 @@ nav a {
 .mission-bg { background-image: url('mission-bg.jpg') !important; }
 .chooseus-bg { background-image: url('chooseus-bg.jpg') !important; }
 
-/* PU Flooring */
-.pu-overview-bg { background-image: url('pu-overview-bg.jpg') !important; }
-.coldstorage-bg { background-image: url('coldstorage-bg.jpg') !important; }
-.dressingplant-bg { background-image: url('dressingplant-bg.jpg') !important; }
-.hatchery-bg { background-image: url('hatchery-bg.jpg') !important; }
+/* ============================================================ */
+/* 5. WHY CHOOSE US - FIXED DESIGN (THE FIX) */
+/* ============================================================ */
+/* Ito ang magbabalik sa green box/bar design */
+.chooseus-bg ul { 
+    list-style: none !important; 
+    padding: 0 !important; 
+    max-width: 700px !important; 
+    margin: 0 auto !important; 
+    display: block !important;
+}
 
-/* Epoxy Flooring */
-.epoxy-overview-bg { background-image: url('epoxy-overview-bg.jpg') !important; }
-.epoxy-mortar-bg { background-image: url('epoxy-mortar-bg.jpg') !important; }
-.epoxy-paint-bg { background-image: url('epoxy-paint-bg.jpg') !important; }
+.chooseus-bg ul li {
+    display: block !important;
+    background-color: rgba(224, 242, 233, 0.95) !important;
+    margin: 12px 0 !important; 
+    padding: 18px 25px !important; 
+    border-radius: 5px !important;
+    font-weight: bold !important; 
+    font-size: 16px !important;
+    color: #004d00 !important;
+    text-align: left !important;
+    border-left: 8px solid #00a651 !important;
+    transition: 0.3s;
+}
+
+.chooseus-bg ul li:hover {
+    background-color: #ffffff !important;
+    transform: translateX(10px);
+}
 
 /* ============================================================ */
-/* 5. BUTTONS & BARS (LOCKED) */
+/* 6. BUTTONS & BARS (LOCKED) */
 /* ============================================================ */
 .button, a.button {
     display: inline-block !important;
@@ -122,17 +142,13 @@ nav a {
     font-weight: bold !important;
     border-left: 10px solid #00a651 !important;
     border-radius: 5px !important;
-    text-align: left !important;
 }
 
 /* ============================================================ */
-/* 6. FOOTER */
+/* 7. FOOTER & MOBILE RESPONSIVENESS */
 /* ============================================================ */
 footer { text-align: center; padding: 30px; background-color: #00a651; color: white; }
 
-/* ============================================================ */
-/* 7. MOBILE RESPONSIVENESS & FORCE RE-RENDER */
-/* ============================================================ */
 @media (max-width: 768px) {
     header { flex-direction: column; padding: 10px; }
     nav { margin-top: 10px; }
@@ -142,12 +158,12 @@ footer { text-align: center; padding: 30px; background-color: #00a651; color: wh
     .hero-content h1 { font-size: 30px; }
     .hero-content p { font-size: 16px; }
 
-    /* FORCE RE-RENDER ON MOBILE */
-    .hero-section, .home-main, .epoxy-overview-bg, .epoxy-mortar-bg, .epoxy-paint-bg {
-        display: flex !important;
+    /* Force background on mobile */
+    .hero-section, .home-main, .chooseus-bg {
         background-attachment: scroll !important;
         background-size: cover !important;
         background-position: center center !important;
-        min-height: 450px !important; /* Fixed height para hindi mag-collapse sa mobile */
+        min-height: 50vh !important;
+        display: flex !important;
     }
 }
