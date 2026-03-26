@@ -70,111 +70,26 @@ nav a:hover {
 }
 
 /* ======================== */
-/* 3. HOME HERO SECTION (LOCKED) */
+/* 3. HERO & SUB-PAGES STRUCTURE (LOCKED) */
 /* ======================== */
-.home-main {
-    height: calc(100vh - 80px);
-    background-image: url('home-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    color: white;
-}
-
-.home-main::before {
-    content: "";
-    position: absolute;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    top: 0; left: 0;
-}
-
-.home-main .hero-content {
-    text-align: center;
-    z-index: 1;
-    max-width: 900px;
-    padding: 20px;
-}
-
-.home-main h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
-    color: white;
-    font-weight: bold;
-}
-
-.home-main p {
-    font-size: 22px;
-    margin-bottom: 30px;
-    color: white;
-}
-
-.button {
-    display: inline-block;
-    background-color: #00a651;
-    color: white;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: 0.3s;
-    z-index: 2;
-    position: relative;
-    border: none;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color: #004d00;
-}
-
-/* ======================== */
-/* 4. COMMON HERO SECTIONS & SUB-PAGES (LOCKED STYLE) */
-/* ======================== */
-.hero-section, .overview-bg, .coldstorage-bg, .dressingplant-bg, .hatchery-bg, 
+.home-main, .hero-section, 
+.pu-overview-bg, .coldstorage-bg, .dressingplant-bg, .hatchery-bg, 
 .epoxy-overview-bg, .epoxy-mortar-bg, .epoxy-paint-bg,
-.wp-overview-bg, .wp-concrete-bg, .wp-roof-bg {
+.wp-overview-bg, .wp-concrete-bg, .wp-roof-bg, .services-bg {
     min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 100px 20px; 
-    background-color: #ffffff;
     position: relative;
-}
-
-/* Background Assignments */
-.services-bg { background-image: url('services-bg.jpg') !important; }
-.company-bg { background-image: url('company-bg.jpg') !important; }
-.mission-bg { background-image: url('mission-bg.jpg') !important; }
-.chooseus-bg { background-image: url('chooseus-bg.jpg') !important; }
-.overview-bg { background-image: url('overview-bg.jpg') !important; }
-.coldstorage-bg { background-image: url('coldstorage-bg.jpg') !important; }
-.dressingplant-bg { background-image: url('dressingplant-bg.jpg') !important; }
-.hatchery-bg { background-image: url('hatchery-bg.jpg') !important; }
-.epoxy-overview-bg { background-image: url('epoxy-overview-bg.jpg') !important; }
-.epoxy-mortar-bg { background-image: url('epoxy-mortar-bg.jpg') !important; }
-.epoxy-paint-bg { background-image: url('epoxy-paint-bg.jpg') !important; }
-.wp-overview-bg { background-image: url('wp-overview-bg.jpg') !important; }
-.wp-concrete-bg { background-image: url('wp-concrete-bg.jpg') !important; }
-.wp-roof-bg { background-image: url('wp-roof-bg.jpg') !important; }
-
-.services-bg, .company-bg, .mission-bg, .chooseus-bg, 
-.overview-bg, .coldstorage-bg, .dressingplant-bg, .hatchery-bg,
-.epoxy-overview-bg, .epoxy-mortar-bg, .epoxy-paint-bg,
-.wp-overview-bg, .wp-concrete-bg, .wp-roof-bg {
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
 }
 
-/* Overlay para sa images */
-.services-bg::before, .company-bg::before, .mission-bg::before, .chooseus-bg::before,
-.overview-bg::before, .coldstorage-bg::before, .dressingplant-bg::before, .hatchery-bg::before,
+/* Dark Overlays para sa lahat ng images */
+.home-main::before, .services-bg::before, .company-bg::before, .mission-bg::before, .chooseus-bg::before,
+.pu-overview-bg::before, .coldstorage-bg::before, .dressingplant-bg::before, .hatchery-bg::before,
 .epoxy-overview-bg::before, .epoxy-mortar-bg::before, .epoxy-paint-bg::before,
 .wp-overview-bg::before, .wp-concrete-bg::before, .wp-roof-bg::before {
     content: "";
@@ -182,55 +97,93 @@ nav a:hover {
     width: 100%; height: 100%;
     background-color: rgba(0,0,0,0.6); 
     top: 0; left: 0;
+    z-index: 0;
 }
 
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    padding: 20px;
+}
+
+/* ======================== */
+/* 4. BACKGROUND IMAGE ASSIGNMENTS */
+/* ======================== */
+.home-main { background-image: url('home-bg.jpg') !important; }
+.services-bg { background-image: url('services-bg.jpg') !important; }
+.company-bg { background-image: url('company-bg.jpg') !important; }
+.mission-bg { background-image: url('mission-bg.jpg') !important; }
+.chooseus-bg { background-image: url('chooseus-bg.jpg') !important; }
+
+/* PU Flooring */
+.pu-overview-bg { background-image: url('pu-overview-bg.jpg') !important; }
+.coldstorage-bg { background-image: url('coldstorage-bg.jpg') !important; }
+.dressingplant-bg { background-image: url('dressingplant-bg.jpg') !important; }
+.hatchery-bg { background-image: url('hatchery-bg.jpg') !important; }
+
+/* Epoxy */
+.epoxy-overview-bg { background-image: url('epoxy-overview-bg.jpg') !important; }
+.epoxy-mortar-bg { background-image: url('epoxy-mortar-bg.jpg') !important; }
+.epoxy-paint-bg { background-image: url('epoxy-paint-bg.jpg') !important; }
+
+/* Waterproofing */
+.wp-overview-bg { background-image: url('wp-overview-bg.jpg') !important; }
+.wp-concrete-bg { background-image: url('wp-concrete-bg.jpg') !important; }
+.wp-roof-bg { background-image: url('wp-roof-bg.jpg') !important; }
+
+/* ======================== */
+/* 5. TEXT & BUTTONS (LOCKED) */
+/* ======================== */
 .hero-content h1 {
     font-size: 40px;
     margin-bottom: 20px;
     color: #00a651; 
-    position: relative;
-    z-index: 1;
 }
 
 .hero-content p {
     font-size: 20px;
     margin-bottom: 20px;
-    position: relative;
-    z-index: 1;
+    color: white; 
 }
 
-.services-bg p, .company-bg p, .mission-bg p, .chooseus-bg p,
-.overview-bg p, .coldstorage-bg p, .dressingplant-bg p, .hatchery-bg p,
-.epoxy-overview-bg p, .epoxy-mortar-bg p, .epoxy-paint-bg p,
-.wp-overview-bg p, .wp-concrete-bg p, .wp-roof-bg p {
+.button {
+    display: inline-block;
+    background-color: #00a651;
     color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: #004d00;
 }
 
 /* ======================== */
-/* 5. WHY CHOOSE US - FIXED LIST (LOCKED) */
+/* 6. WHY CHOOSE US - FIXED DESIGN (LOCKED) */
 /* ======================== */
-/* Ibinalik natin ang dati mong design: Green bg at Dark Green text */
 .chooseus-bg ul {
     list-style: none;
     padding: 0;
     max-width: 700px;
     margin: 0 auto;
     text-align: left;
-    position: relative;
-    z-index: 1;
 }
 
 .chooseus-bg ul li {
-    background-color: rgba(224, 242, 233, 0.9); /* Dati mong green bg */
+    background-color: rgba(224, 242, 233, 0.9) !important;
     margin: 10px 0;
     padding: 15px;
     border-radius: 5px;
-    font-weight: bold;
-    color: #004d00; /* Dati mong dark green text */
+    font-weight: bold !important;
+    color: #004d00 !important;
 }
 
 /* ======================== */
-/* 6. SERVICES BARS STYLE */
+/* 7. SERVICES LIST BARS */
 /* ======================== */
 .services-list-bar {
     text-decoration: none;
@@ -241,20 +194,12 @@ nav a:hover {
     color: #004d00;
     font-weight: bold;
     border-left: 5px solid #00a651;
-    transition: 0.3s;
     margin: 15px 0;
     text-align: left;
-    position: relative;
-    z-index: 1;
-}
-
-.services-list-bar:hover {
-    background-color: #d1eadf;
-    transform: translateX(5px);
 }
 
 /* ======================== */
-/* 7. FOOTER (LOCKED) */
+/* 8. FOOTER & MOBILE (LOCKED) */
 /* ======================== */
 footer {
     text-align: center;
@@ -263,43 +208,10 @@ footer {
     color: white;
 }
 
-/* ======================== */
-/* 8. MOBILE RESPONSIVENESS (LOCKED) */
-/* ======================== */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-    }
-
-    .header-left {
-        margin-bottom: 10px;
-    }
-
-    nav {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        width: 100%;
-    }
-
-    nav a {
-        margin: 0 8px;
-        font-size: 14px;
-        margin-left: 0;
-    }
-
-    body {
-        padding-top: 130px; 
-    }
-
-    .home-main h1 { font-size: 30px; }
-    .home-main p { font-size: 16px; }
+    header { flex-direction: column; padding: 10px; }
+    nav a { margin: 0 8px; font-size: 14px; }
+    body { padding-top: 130px; }
     .hero-content h1 { font-size: 28px; }
     .hero-content p { font-size: 16px; }
-    
-    .hero-section {
-        background-attachment: scroll;
-    }
 }
