@@ -1,5 +1,6 @@
 /* ======================== */
-/* RESET & GLOBAL STYLES (LOCKED) */
+/* 1. RESET & GLOBAL STYLES (LOCKED) */
+/* ======================== */
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +18,8 @@ body, html {
 }
 
 /* ======================== */
-/* FIXED HEADER (LOCKED) */
+/* 2. FIXED HEADER & NAV (LOCKED) */
+/* ======================== */
 header {
     display: flex;
     justify-content: space-between;
@@ -34,7 +36,7 @@ header {
 }
 
 body {
-    padding-top: 80px; 
+    padding-top: 80px; /* Space para sa fixed header */
 }
 
 .header-left {
@@ -68,7 +70,8 @@ nav a:hover {
 }
 
 /* ======================== */
-/* HOME HERO SECTION (LOCKED) */
+/* 3. HOME HERO SECTION (LOCKED) */
+/* ======================== */
 .home-main {
     height: calc(100vh - 80px);
     background-image: url('home-bg.jpg');
@@ -121,32 +124,57 @@ nav a:hover {
     z-index: 2;
     position: relative;
     border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #004d00;
 }
 
 /* ======================== */
-/* ABOUT US SECTIONS (LOCKED) */
+/* 4. COMMON HERO SECTIONS (ABOUT & SERVICES) */
+/* ======================== */
 .hero-section {
     min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px; /* Pantay na padding para sa lahat ng sub-pages */
     background-color: #ffffff;
     position: relative;
 }
 
-.hero-section.company-bg { background-image: url('company-bg.jpg'); }
-.hero-section.mission-bg { background-image: url('mission-bg.jpg'); }
-.hero-section.chooseus-bg { background-image: url('chooseus-bg.jpg'); }
+.hero-section.alt {
+    background-color: #f4f4f4;
+}
 
-.hero-section.company-bg, .hero-section.mission-bg, .hero-section.chooseus-bg {
+/* Shared Background Settings */
+.hero-section.company-bg, 
+.hero-section.mission-bg, 
+.hero-section.chooseus-bg,
+.overview-bg, 
+.coldstorage-bg, 
+.dressingplant-bg, 
+.hatchery-bg {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.hero-section.company-bg::before, .hero-section.mission-bg::before, .hero-section.chooseus-bg::before {
+/* Background Images para sa About */
+.hero-section.company-bg { background-image: url('company-bg.jpg'); }
+.hero-section.mission-bg { background-image: url('mission-bg.jpg'); }
+.hero-section.chooseus-bg { background-image: url('chooseus-bg.jpg'); }
+
+/* Dark Overlay para sa mga may background images */
+.hero-section.company-bg::before, 
+.hero-section.mission-bg::before, 
+.hero-section.chooseus-bg::before,
+.overview-bg::before, 
+.coldstorage-bg::before, 
+.dressingplant-bg::before, 
+.hatchery-bg::before {
     content: "";
     position: absolute;
     width: 100%; height: 100%;
@@ -154,25 +182,35 @@ nav a:hover {
     top: 0; left: 0;
 }
 
-.hero-section h1 {
+/* Common Header Style para sa About at Services */
+.hero-section h1, .overview-bg h1, .coldstorage-bg h1, .dressingplant-bg h1, .hatchery-bg h1 {
     font-size: 40px;
     margin-bottom: 20px;
-    color: #00a651; 
+    color: #00a651; /* Ang berdeng kulay na pinili mo */
     position: relative;
     z-index: 1;
 }
 
-.hero-section p {
+/* Common Text Style */
+.hero-section p, .overview-bg p, .coldstorage-bg p, .dressingplant-bg p, .hatchery-bg p {
     font-size: 20px;
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
 }
 
-.hero-section.company-bg p, .hero-section.mission-bg p, .hero-section.chooseus-bg p {
+/* White text kapag may overlay/background */
+.hero-section.company-bg p, 
+.hero-section.mission-bg p, 
+.hero-section.chooseus-bg p,
+.overview-bg p, 
+.coldstorage-bg p, 
+.dressingplant-bg p, 
+.hatchery-bg p {
     color: white;
 }
 
+/* List Style (Why Choose Us & Services Bar) */
 .hero-section ul {
     list-style: none;
     padding: 0;
@@ -193,7 +231,31 @@ nav a:hover {
 }
 
 /* ======================== */
-/* FOOTER */
+/* 5. SERVICES SPECIFIC LAYOUT */
+/* ======================== */
+/* Special bars para sa Services main menu */
+.services-list-bar {
+    text-decoration: none;
+    display: block;
+    background-color: #e0f2e9;
+    padding: 20px;
+    border-radius: 5px;
+    color: #004d00;
+    font-weight: bold;
+    border-left: 5px solid #00a651;
+    transition: 0.3s;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.services-list-bar:hover {
+    background-color: #d1eadf;
+    transform: translateX(5px);
+}
+
+/* ======================== */
+/* 6. FOOTER (LOCKED) */
+/* ======================== */
 footer {
     text-align: center;
     padding: 30px 20px;
@@ -202,38 +264,39 @@ footer {
 }
 
 /* ======================== */
-/* MOBILE FIX (FIXING THE MENU) */
+/* 7. MOBILE RESPONSIVENESS (LOCKED) */
+/* ======================== */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Brand sa taas, Nav sa baba */
+        flex-direction: column;
         align-items: center;
         padding: 10px;
     }
 
     .header-left {
-        margin-bottom: 10px; /* Space sa pagitan ng Brand at Menu */
+        margin-bottom: 10px;
     }
 
     nav {
         display: flex;
-        justify-content: center; /* Nakasentro ang menu */
-        flex-direction: row; /* Nakahilera pa-kanan ang links gaya ng dati */
+        justify-content: center;
+        flex-direction: row;
         width: 100%;
     }
 
     nav a {
-        margin: 0 8px; /* Konting dikit para magkasya lahat sa isang hilera */
+        margin: 0 8px;
         font-size: 14px;
-        margin-left: 0; /* Tinanggal ang left margin para pantay */
+        margin-left: 0;
     }
 
     body {
-        padding-top: 130px; /* Dinagdagan ang space para hindi matakpan ng 2-row header ang content */
+        padding-top: 130px; 
     }
 
-    /* Mobile font sizes (Locked) */
+    /* Mobile Text Sizing */
     .home-main h1 { font-size: 30px; }
     .home-main p { font-size: 16px; }
-    .hero-section h1 { font-size: 28px; }
-    .hero-section p { font-size: 16px; }
+    .hero-section h1, .overview-bg h1, .coldstorage-bg h1, .dressingplant-bg h1, .hatchery-bg h1 { font-size: 28px; }
+    .hero-section p, .overview-bg p, .coldstorage-bg p, .dressingplant-bg p, .hatchery-bg p { font-size: 16px; }
 }
