@@ -82,8 +82,9 @@ nav a:hover {
     align-items: center;
     text-align: center;
     position: relative;
+    /* In-update natin ito para mas friendly sa mobile */
     background-size: cover !important;
-    background-position: center !important;
+    background-position: center center !important;
     background-repeat: no-repeat !important;
 }
 
@@ -122,16 +123,6 @@ nav a:hover {
 .dressingplant-bg { background-image: url('dressingplant-bg.jpg') !important; }
 .hatchery-bg { background-image: url('hatchery-bg.jpg') !important; }
 
-/* Epoxy */
-.epoxy-overview-bg { background-image: url('epoxy-overview-bg.jpg') !important; }
-.epoxy-mortar-bg { background-image: url('epoxy-mortar-bg.jpg') !important; }
-.epoxy-paint-bg { background-image: url('epoxy-paint-bg.jpg') !important; }
-
-/* Waterproofing */
-.wp-overview-bg { background-image: url('wp-overview-bg.jpg') !important; }
-.wp-concrete-bg { background-image: url('wp-concrete-bg.jpg') !important; }
-.wp-roof-bg { background-image: url('wp-roof-bg.jpg') !important; }
-
 /* ======================== */
 /* 5. TEXT & BUTTONS (LOCKED) */
 /* ======================== */
@@ -145,21 +136,6 @@ nav a:hover {
     font-size: 20px;
     margin-bottom: 20px;
     color: white; 
-}
-
-.button {
-    display: inline-block;
-    background-color: #00a651;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.button:hover {
-    background-color: #004d00;
 }
 
 /* ======================== */
@@ -183,23 +159,7 @@ nav a:hover {
 }
 
 /* ======================== */
-/* 7. SERVICES LIST BARS */
-/* ======================== */
-.services-list-bar {
-    text-decoration: none;
-    display: block;
-    background-color: #e0f2e9;
-    padding: 20px;
-    border-radius: 5px;
-    color: #004d00;
-    font-weight: bold;
-    border-left: 5px solid #00a651;
-    margin: 15px 0;
-    text-align: left;
-}
-
-/* ======================== */
-/* 8. FOOTER & MOBILE (LOCKED) */
+/* 7. FOOTER & MOBILE (LOCKED) */
 /* ======================== */
 footer {
     text-align: center;
@@ -214,4 +174,11 @@ footer {
     body { padding-top: 130px; }
     .hero-content h1 { font-size: 28px; }
     .hero-content p { font-size: 16px; }
+
+    /* Force mobile to show background images correctly */
+    .pu-overview-bg, .coldstorage-bg, .dressingplant-bg, .hatchery-bg, .services-bg {
+        background-attachment: scroll !important; /* Minsan ang 'fixed' ay hindi gumagana sa mobile browsers */
+        background-size: cover !important;
+        background-position: center center !important;
+    }
 }
