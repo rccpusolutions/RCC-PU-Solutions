@@ -11,6 +11,7 @@ body, html {
     height: 100%;
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    background-color: #f4f4f4;
 }
 
 /* ============================================================ */
@@ -130,7 +131,7 @@ nav a {
 footer { text-align: center; padding: 30px; background-color: #00a651; color: white; }
 
 /* ============================================================ */
-/* 7. MOBILE RESPONSIVENESS & BACKGROUND FORCE FIX */
+/* 7. MOBILE RESPONSIVENESS & FORCE RE-RENDER */
 /* ============================================================ */
 @media (max-width: 768px) {
     header { flex-direction: column; padding: 10px; }
@@ -141,15 +142,12 @@ footer { text-align: center; padding: 30px; background-color: #00a651; color: wh
     .hero-content h1 { font-size: 30px; }
     .hero-content p { font-size: 16px; }
 
-    /* FORCE BACKGROUNDS ON MOBILE - Eto ang pilit sa images */
-    .home-main, .hero-section, .services-bg, .pu-overview-bg, 
-    .company-bg, .mission-bg, .chooseus-bg, .coldstorage-bg, 
-    .dressingplant-bg, .hatchery-bg, .epoxy-overview-bg, 
-    .epoxy-mortar-bg, .epoxy-paint-bg {
+    /* FORCE RE-RENDER ON MOBILE */
+    .hero-section, .home-main, .epoxy-overview-bg, .epoxy-mortar-bg, .epoxy-paint-bg {
+        display: flex !important;
         background-attachment: scroll !important;
         background-size: cover !important;
         background-position: center center !important;
-        min-height: 50vh !important;
-        display: flex !important;
+        min-height: 450px !important; /* Fixed height para hindi mag-collapse sa mobile */
     }
 }
