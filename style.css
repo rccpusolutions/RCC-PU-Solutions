@@ -1,5 +1,5 @@
 /* ============================================================ */
-/* 1. RESET & GLOBAL STYLES (LOCKED) */
+/* 1. RESET & GLOBAL STYLES */
 /* ============================================================ */
 * {
     margin: 0;
@@ -11,10 +11,11 @@ body, html {
     height: 100%;
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    background-color: #f4f4f4;
 }
 
 /* ============================================================ */
-/* 2. FIXED HEADER & NAV (LOCKED) */
+/* 2. FIXED HEADER & NAV */
 /* ============================================================ */
 header {
     display: flex;
@@ -26,6 +27,7 @@ header {
     position: fixed;
     top: 0; left: 0; width: 100%;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 body { padding-top: 80px; }
@@ -42,7 +44,7 @@ nav a {
 }
 
 /* ============================================================ */
-/* 3. HERO STRUCTURES & OVERLAYS */
+/* 3. HERO & BACKGROUND LOGIC */
 /* ============================================================ */
 .home-main, .hero-section, .services-bg, .pu-overview-bg, 
 .company-bg, .mission-bg, .chooseus-bg, .coldstorage-bg, 
@@ -56,9 +58,10 @@ nav a {
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
+    background-attachment: fixed; /* Desktop parallax effect */
 }
 
-/* Dark Overlays */
+/* Overlays */
 .home-main::before, .hero-section::before, .services-bg::before, 
 .pu-overview-bg::before, .company-bg::before, .mission-bg::before, 
 .chooseus-bg::before, .coldstorage-bg::before, 
@@ -70,27 +73,23 @@ nav a {
     top: 0; left: 0; z-index: 0;
 }
 
-.hero-content { position: relative; z-index: 1; max-width: 900px; padding: 20px; }
-.hero-content h1 { font-size: 45px; margin-bottom: 20px; color: #00a651; }
-.hero-content p { font-size: 20px; margin-bottom: 30px; color: white !important; }
-
-/* ============================================================ */
-/* 4. BACKGROUND IMAGE ASSIGNMENTS */
-/* ============================================================ */
+/* Background Images */
 .home-main { background-image: url('home-bg.jpg') !important; }
 .services-bg { background-image: url('services-bg.jpg') !important; }
 .company-bg { background-image: url('company-bg.jpg') !important; }
 .mission-bg { background-image: url('mission-bg.jpg') !important; }
 .chooseus-bg { background-image: url('chooseus-bg.jpg') !important; }
-
-/* PU Flooring Specific Images */
 .pu-overview-bg { background-image: url('pu-overview-bg.jpg') !important; }
 .coldstorage-bg { background-image: url('coldstorage-bg.jpg') !important; }
 .dressingplant-bg { background-image: url('dressingplant-bg.jpg') !important; }
 .hatchery-bg { background-image: url('hatchery-bg.jpg') !important; }
 
+.hero-content { position: relative; z-index: 1; max-width: 900px; padding: 20px; }
+.hero-content h1 { font-size: 45px; margin-bottom: 20px; color: #00a651; font-weight: bold; }
+.hero-content p { font-size: 20px; margin-bottom: 30px; color: white !important; }
+
 /* ============================================================ */
-/* 5. BUTTONS & BARS (LOCKED) */
+/* 4. BUTTONS & BARS (LOCKED) */
 /* ============================================================ */
 .button, a.button {
     display: inline-block !important;
@@ -100,7 +99,6 @@ nav a {
     border-radius: 5px !important;
     text-decoration: none !important;
     font-weight: bold !important;
-    font-size: 18px !important;
     border: none !important;
 }
 
@@ -115,11 +113,10 @@ nav a {
     font-weight: bold !important;
     border-left: 10px solid #00a651 !important;
     border-radius: 5px !important;
-    text-align: left !important;
 }
 
 /* ============================================================ */
-/* 6. WHY CHOOSE US (LOCKED) */
+/* 5. WHY CHOOSE US (LOCKED) */
 /* ============================================================ */
 .chooseus-bg ul li {
     background-color: rgba(224, 242, 233, 0.9) !important;
@@ -129,16 +126,28 @@ nav a {
 }
 
 /* ============================================================ */
-/* 7. FOOTER & MOBILE RESPONSIVENESS */
+/* 6. FOOTER */
 /* ============================================================ */
 footer { text-align: center; padding: 30px; background-color: #00a651; color: white; }
 
+/* ============================================================ */
+/* 7. MOBILE RESPONSIVENESS & BACKGROUND FIX */
+/* ============================================================ */
 @media (max-width: 768px) {
     header { flex-direction: column; padding: 10px; }
     nav { margin-top: 10px; }
     nav a { margin: 0 10px; font-size: 14px; }
     body { padding-top: 130px; }
     .hero-content h1 { font-size: 30px; }
-    /* Force background on mobile */
-    .hero-section, .home-main { background-attachment: scroll !important; }
+    .hero-content p { font-size: 16px; }
+
+    /* FORCE BACKGROUNDS ON MOBILE */
+    .home-main, .hero-section, .services-bg, .pu-overview-bg, 
+    .company-bg, .mission-bg, .chooseus-bg, .coldstorage-bg, 
+    .dressingplant-bg, .hatchery-bg {
+        background-attachment: scroll !important; /* Fixed doesn't work well on mobile */
+        background-size: cover !important;
+        background-position: center center !important;
+        min-height: 50vh !important;
+    }
 }
