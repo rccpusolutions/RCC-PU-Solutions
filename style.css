@@ -34,7 +34,7 @@ header {
 }
 
 body {
-    padding-top: 80px; /* Space for fixed header */
+    padding-top: 80px; 
 }
 
 /* LOGO + NAME */
@@ -54,12 +54,7 @@ body {
     color: #004d00;
 }
 
-/* MENU (DESKTOP) */
-nav {
-    display: flex;
-    align-items: center;
-}
-
+/* MENU */
 nav a {
     color: #00a651;
     text-decoration: none;
@@ -81,22 +76,19 @@ nav a:hover {
     background-image: url('home-bg.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    color: white; /* Puti ang text sa Home section */
+    color: white;
 }
 
 .home-main::before {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5); /* Overlay para mabasa ang text */
-    top: 0;
-    left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    top: 0; left: 0;
 }
 
 .hero-content {
@@ -106,16 +98,8 @@ nav a:hover {
     padding: 20px;
 }
 
-.home-main h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
-    color: white; /* Puti ang text sa Home section */
-}
-
-.home-main p {
-    font-size: 22px;
-    margin-bottom: 30px;
-    color: white; /* Puti ang text sa Home section */
+.home-main h1, .home-main p {
+    color: white;
 }
 
 .button {
@@ -127,16 +111,12 @@ nav a:hover {
     border-radius: 5px;
     text-decoration: none;
     transition: 0.3s;
-    border: none;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color: #004d00;
+    z-index: 2;
+    position: relative;
 }
 
 /* ======================== */
-/* ABOUT & SERVICES SECTIONS */
+/* ABOUT US SECTIONS */
 .hero-section {
     min-height: 80vh;
     display: flex;
@@ -148,56 +128,51 @@ nav a:hover {
     position: relative;
 }
 
-.hero-section.alt {
-    background-color: #f4f4f4;
-}
+/* BACKGROUND IMAGES SETUP */
+.hero-section.company-bg { background-image: url('company-bg.jpg'); }
+.hero-section.mission-bg { background-image: url('mission-bg.jpg'); }
+.hero-section.chooseus-bg { background-image: url('chooseus-bg.jpg'); } /* BAGO ITONG LINE */
 
-/* BACKGROUND IMAGES FOR ABOUT US */
-.hero-section.company-bg {
-    background-image: url('company-bg.jpg');
+.hero-section.company-bg, 
+.hero-section.mission-bg, 
+.hero-section.chooseus-bg {
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
-.hero-section.mission-bg {
-    background-image: url('mission-bg.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-/* Overlay para sa About sections na may images */
+/* DARK OVERLAY PARA SA MGA SECTIONS NA MAY BG IMAGE */
 .hero-section.company-bg::before,
-.hero-section.mission-bg::before {
+.hero-section.mission-bg::before,
+.hero-section.chooseus-bg::before {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    top: 0;
-    left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6); /* Slightly darker para mas lumitaw ang text */
+    top: 0; left: 0;
 }
 
-/* Header colors sa About/Services (COMPANY BACKGROUND, MISSION, VISION, WHY CHOOSE US) */
+/* HEADERS (COMPANY BG, MISSION, VISION, WHY CHOOSE US) */
 .hero-section h1 {
     font-size: 40px;
     margin-bottom: 20px;
-    color: #00a651; /* Ginamit ang kulay mula sa image */
-    position: relative; /* Para nasa ibabaw ng overlay */
-    z-index: 1; /* Para nasa ibabaw ng overlay */
+    color: #00a651; /* Ang kulay na binigay mo */
+    position: relative;
+    z-index: 1;
 }
 
 .hero-section p {
     font-size: 20px;
     margin-bottom: 20px;
-    color: #333; /* Pinanatili ang madilim na kulay para sa katawan ng text */
-}
-
-/* Puti ang katawan ng text sa About sections na may images */
-.hero-section.company-bg p,
-.hero-section.mission-bg p {
-    color: white;
     position: relative;
     z-index: 1;
+}
+
+/* WHITE TEXT PARA SA SECTIONS NA MAY BG IMAGE */
+.hero-section.company-bg p,
+.hero-section.mission-bg p,
+.hero-section.chooseus-bg p {
+    color: white;
 }
 
 /* LIST STYLES (Why Choose Us) */
@@ -212,7 +187,7 @@ nav a:hover {
 }
 
 .hero-section ul li {
-    background-color: #e0f2e9;
+    background-color: rgba(224, 242, 233, 0.9); /* Semi-transparent para sosyal tingnan */
     margin: 10px 0;
     padding: 15px;
     border-radius: 5px;
@@ -220,7 +195,8 @@ nav a:hover {
     color: #004d00;
 }
 
-/* FOOTER */
+/* ======================== */
+/* FOOTER & MOBILE */
 footer {
     text-align: center;
     padding: 30px 20px;
@@ -228,45 +204,8 @@ footer {
     color: white;
 }
 
-/* ======================== */
-/* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .header-left {
-        margin-bottom: 10px;
-    }
-
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    nav a {
-        margin: 5px 10px;
-        font-size: 14px;
-    }
-
-    body {
-        padding-top: 120px; /* Mas malaking space para sa stacked header sa mobile */
-    }
-
-    .home-main h1 {
-        font-size: 28px;
-    }
-
-    .home-main p {
-        font-size: 16px;
-    }
-
-    .hero-section {
-        padding: 40px 15px;
-    }
-
-    .hero-section h1 {
-        font-size: 28px;
-    }
+    body { padding-top: 120px; }
+    .home-main h1 { font-size: 28px; }
+    .hero-section h1 { font-size: 28px; }
 }
