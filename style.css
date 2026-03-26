@@ -70,7 +70,7 @@ nav a:hover {
 }
 
 /* ======================== */
-/* HOME HERO SECTION */
+/* HOME HERO SECTION (FIXED SIZING) */
 .home-main {
     height: calc(100vh - 80px);
     background-image: url('home-bg.jpg');
@@ -91,14 +91,26 @@ nav a:hover {
     top: 0; left: 0;
 }
 
-.hero-content {
+/* Spesipiko para sa Home Page lang */
+.home-main .hero-content {
     text-align: center;
     z-index: 1;
     max-width: 900px;
     padding: 20px;
 }
 
-.home-main h1, .home-main p {
+/* Ibinabalik natin sa malaking font size (50px) at margin ang h1 */
+.home-main h1 {
+    font-size: 50px;
+    margin-bottom: 20px; /* Dagdag space para hindi dikit sa p */
+    color: white;
+    font-weight: bold;
+}
+
+/* Ibinabalik natin ang laki (22px) at margin ng p */
+.home-main p {
+    font-size: 22px;
+    margin-bottom: 30px; /* Dagdag space para hindi dikit sa button */
     color: white;
 }
 
@@ -113,10 +125,12 @@ nav a:hover {
     transition: 0.3s;
     z-index: 2;
     position: relative;
+    border: none;
+    cursor: pointer;
 }
 
 /* ======================== */
-/* ABOUT US SECTIONS */
+/* ABOUT US SECTIONS (KEEPING THESE STYLES) */
 .hero-section {
     min-height: 80vh;
     display: flex;
@@ -128,10 +142,9 @@ nav a:hover {
     position: relative;
 }
 
-/* BACKGROUND IMAGES SETUP */
 .hero-section.company-bg { background-image: url('company-bg.jpg'); }
 .hero-section.mission-bg { background-image: url('mission-bg.jpg'); }
-.hero-section.chooseus-bg { background-image: url('chooseus-bg.jpg'); } /* BAGO ITONG LINE */
+.hero-section.chooseus-bg { background-image: url('chooseus-bg.jpg'); }
 
 .hero-section.company-bg, 
 .hero-section.mission-bg, 
@@ -141,22 +154,20 @@ nav a:hover {
     background-repeat: no-repeat;
 }
 
-/* DARK OVERLAY PARA SA MGA SECTIONS NA MAY BG IMAGE */
 .hero-section.company-bg::before,
 .hero-section.mission-bg::before,
 .hero-section.chooseus-bg::before {
     content: "";
     position: absolute;
     width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.6); /* Slightly darker para mas lumitaw ang text */
+    background-color: rgba(0,0,0,0.6); 
     top: 0; left: 0;
 }
 
-/* HEADERS (COMPANY BG, MISSION, VISION, WHY CHOOSE US) */
 .hero-section h1 {
     font-size: 40px;
     margin-bottom: 20px;
-    color: #00a651; /* Ang kulay na binigay mo */
+    color: #00a651; 
     position: relative;
     z-index: 1;
 }
@@ -168,14 +179,12 @@ nav a:hover {
     z-index: 1;
 }
 
-/* WHITE TEXT PARA SA SECTIONS NA MAY BG IMAGE */
 .hero-section.company-bg p,
 .hero-section.mission-bg p,
 .hero-section.chooseus-bg p {
     color: white;
 }
 
-/* LIST STYLES (Why Choose Us) */
 .hero-section ul {
     list-style: none;
     padding: 0;
@@ -187,7 +196,7 @@ nav a:hover {
 }
 
 .hero-section ul li {
-    background-color: rgba(224, 242, 233, 0.9); /* Semi-transparent para sosyal tingnan */
+    background-color: rgba(224, 242, 233, 0.9);
     margin: 10px 0;
     padding: 15px;
     border-radius: 5px;
@@ -206,6 +215,12 @@ footer {
 
 @media (max-width: 768px) {
     body { padding-top: 120px; }
-    .home-main h1 { font-size: 28px; }
+    
+    /* Mobile font sizes for Home */
+    .home-main h1 { font-size: 30px; }
+    .home-main p { font-size: 16px; }
+
+    /* Mobile font sizes for About */
     .hero-section h1 { font-size: 28px; }
+    .hero-section p { font-size: 16px; }
 }
