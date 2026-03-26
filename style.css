@@ -148,31 +148,33 @@ nav a:hover {
 }
 
 /* Background Image Assignments */
-.services-bg { background-image: url('services-bg.jpg'); }
-.company-bg { background-image: url('company-bg.jpg'); }
-.mission-bg { background-image: url('mission-bg.jpg'); }
-.chooseus-bg { background-image: url('chooseus-bg.jpg'); }
-.overview-bg { background-image: url('overview-bg.jpg'); }
-.coldstorage-bg { background-image: url('coldstorage-bg.jpg'); }
-.dressingplant-bg { background-image: url('dressingplant-bg.jpg'); }
-.hatchery-bg { background-image: url('hatchery-bg.jpg'); }
-.epoxy-overview-bg { background-image: url('epoxy-overview-bg.jpg'); }
-.epoxy-mortar-bg { background-image: url('epoxy-mortar-bg.jpg'); }
-.epoxy-paint-bg { background-image: url('epoxy-paint-bg.jpg'); }
-.wp-overview-bg { background-image: url('wp-overview-bg.jpg'); }
-.wp-concrete-bg { background-image: url('wp-concrete-bg.jpg'); }
-.wp-roof-bg { background-image: url('wp-roof-bg.jpg'); }
+/* Nilagyan natin ng !important para sigurado sa mobile */
+.services-bg { background-image: url('services-bg.jpg') !important; }
+.company-bg { background-image: url('company-bg.jpg') !important; }
+.mission-bg { background-image: url('mission-bg.jpg') !important; }
+.chooseus-bg { background-image: url('chooseus-bg.jpg') !important; }
+.overview-bg { background-image: url('overview-bg.jpg') !important; }
+.coldstorage-bg { background-image: url('coldstorage-bg.jpg') !important; }
+.dressingplant-bg { background-image: url('dressingplant-bg.jpg') !important; }
+.hatchery-bg { background-image: url('hatchery-bg.jpg') !important; }
+.epoxy-overview-bg { background-image: url('epoxy-overview-bg.jpg') !important; }
+.epoxy-mortar-bg { background-image: url('epoxy-mortar-bg.jpg') !important; }
+.epoxy-paint-bg { background-image: url('epoxy-paint-bg.jpg') !important; }
+.wp-overview-bg { background-image: url('wp-overview-bg.jpg') !important; }
+.wp-concrete-bg { background-image: url('wp-concrete-bg.jpg') !important; }
+.wp-roof-bg { background-image: url('wp-roof-bg.jpg') !important; }
 
+/* Global Background Settings para sa lahat ng sub-pages */
 .services-bg, .company-bg, .mission-bg, .chooseus-bg, 
 .overview-bg, .coldstorage-bg, .dressingplant-bg, .hatchery-bg,
 .epoxy-overview-bg, .epoxy-mortar-bg, .epoxy-paint-bg,
 .wp-overview-bg, .wp-concrete-bg, .wp-roof-bg {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
 
-/* Overlay for images */
+/* Overlay para sa images */
 .services-bg::before, .company-bg::before, .mission-bg::before, .chooseus-bg::before,
 .overview-bg::before, .coldstorage-bg::before, .dressingplant-bg::before, .hatchery-bg::before,
 .epoxy-overview-bg::before, .epoxy-mortar-bg::before, .epoxy-paint-bg::before,
@@ -276,4 +278,9 @@ footer {
     .home-main p { font-size: 16px; }
     .hero-content h1 { font-size: 28px; }
     .hero-content p { font-size: 16px; }
+    
+    /* Siguraduhin na ang background ay mananatiling visible sa mobile */
+    .hero-section {
+        background-attachment: scroll; /* Mas maayos ang performance sa mobile */
+    }
 }
