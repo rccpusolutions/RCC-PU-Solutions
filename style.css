@@ -36,7 +36,7 @@ header {
 }
 
 body {
-    padding-top: 80px; /* Space para sa fixed header */
+    padding-top: 80px; 
 }
 
 .header-left {
@@ -132,7 +132,7 @@ nav a:hover {
 }
 
 /* ======================== */
-/* 4. COMMON HERO SECTIONS (ABOUT & SERVICES) */
+/* 4. COMMON HERO SECTIONS (LOCKED STYLE) */
 /* ======================== */
 .hero-section {
     min-height: 80vh;
@@ -140,7 +140,7 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 100px 20px; /* Pantay na padding para sa lahat ng sub-pages */
+    padding: 100px 20px; 
     background-color: #ffffff;
     position: relative;
 }
@@ -149,32 +149,24 @@ nav a:hover {
     background-color: #f4f4f4;
 }
 
-/* Shared Background Settings */
-.hero-section.company-bg, 
-.hero-section.mission-bg, 
-.hero-section.chooseus-bg,
-.overview-bg, 
-.coldstorage-bg, 
-.dressingplant-bg, 
-.hatchery-bg {
+/* Common Background Settings */
+.hero-section.company-bg, .hero-section.mission-bg, .hero-section.chooseus-bg,
+.overview-bg, .coldstorage-bg, .dressingplant-bg, .hatchery-bg,
+.epoxy-overview-bg, .epoxy-mortar-bg, .epoxy-paint-bg {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* Background Images para sa About */
+/* Background Images */
 .hero-section.company-bg { background-image: url('company-bg.jpg'); }
 .hero-section.mission-bg { background-image: url('mission-bg.jpg'); }
 .hero-section.chooseus-bg { background-image: url('chooseus-bg.jpg'); }
 
-/* Dark Overlay para sa mga may background images */
-.hero-section.company-bg::before, 
-.hero-section.mission-bg::before, 
-.hero-section.chooseus-bg::before,
-.overview-bg::before, 
-.coldstorage-bg::before, 
-.dressingplant-bg::before, 
-.hatchery-bg::before {
+/* Overlay settings para sa images */
+.hero-section.company-bg::before, .hero-section.mission-bg::before, .hero-section.chooseus-bg::before,
+.overview-bg::before, .coldstorage-bg::before, .dressingplant-bg::before, .hatchery-bg::before,
+.epoxy-overview-bg::before, .epoxy-mortar-bg::before, .epoxy-paint-bg::before {
     content: "";
     position: absolute;
     width: 100%; height: 100%;
@@ -182,35 +174,33 @@ nav a:hover {
     top: 0; left: 0;
 }
 
-/* Common Header Style para sa About at Services */
-.hero-section h1, .overview-bg h1, .coldstorage-bg h1, .dressingplant-bg h1, .hatchery-bg h1 {
+/* Common Header Style (Using your Green Color) */
+.hero-section h1, .overview-bg h1, .coldstorage-bg h1, .dressingplant-bg h1, .hatchery-bg h1,
+.epoxy-overview-bg h1, .epoxy-mortar-bg h1, .epoxy-paint-bg h1 {
     font-size: 40px;
     margin-bottom: 20px;
-    color: #00a651; /* Ang berdeng kulay na pinili mo */
+    color: #00a651; 
     position: relative;
     z-index: 1;
 }
 
-/* Common Text Style */
-.hero-section p, .overview-bg p, .coldstorage-bg p, .dressingplant-bg p, .hatchery-bg p {
+/* Common Paragraph Style */
+.hero-section p, .overview-bg p, .coldstorage-bg p, .dressingplant-bg p, .hatchery-bg p,
+.epoxy-overview-bg p, .epoxy-mortar-bg p, .epoxy-paint-bg p {
     font-size: 20px;
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
 }
 
-/* White text kapag may overlay/background */
-.hero-section.company-bg p, 
-.hero-section.mission-bg p, 
-.hero-section.chooseus-bg p,
-.overview-bg p, 
-.coldstorage-bg p, 
-.dressingplant-bg p, 
-.hatchery-bg p {
+/* Puti ang text kapag may overlay/background */
+.hero-section.company-bg p, .hero-section.mission-bg p, .hero-section.chooseus-bg p,
+.overview-bg p, .coldstorage-bg p, .dressingplant-bg p, .hatchery-bg p,
+.epoxy-overview-bg p, .epoxy-mortar-bg p, .epoxy-paint-bg p {
     color: white;
 }
 
-/* List Style (Why Choose Us & Services Bar) */
+/* Why Choose Us & Other List Styles */
 .hero-section ul {
     list-style: none;
     padding: 0;
@@ -231,9 +221,8 @@ nav a:hover {
 }
 
 /* ======================== */
-/* 5. SERVICES SPECIFIC LAYOUT */
+/* 5. SERVICES BARS STYLE */
 /* ======================== */
-/* Special bars para sa Services main menu */
 .services-list-bar {
     text-decoration: none;
     display: block;
@@ -246,6 +235,8 @@ nav a:hover {
     transition: 0.3s;
     margin: 15px 0;
     text-align: left;
+    position: relative;
+    z-index: 1;
 }
 
 .services-list-bar:hover {
@@ -294,9 +285,8 @@ footer {
         padding-top: 130px; 
     }
 
-    /* Mobile Text Sizing */
     .home-main h1 { font-size: 30px; }
     .home-main p { font-size: 16px; }
-    .hero-section h1, .overview-bg h1, .coldstorage-bg h1, .dressingplant-bg h1, .hatchery-bg h1 { font-size: 28px; }
-    .hero-section p, .overview-bg p, .coldstorage-bg p, .dressingplant-bg p, .hatchery-bg p { font-size: 16px; }
+    .hero-section h1, .overview-bg h1, .coldstorage-bg h1, .dressingplant-bg h1, .hatchery-bg h1, .epoxy-overview-bg h1, .epoxy-mortar-bg h1, .epoxy-paint-bg h1 { font-size: 28px; }
+    .hero-section p, .overview-bg p, .coldstorage-bg p, .dressingplant-bg p, .hatchery-bg p, .epoxy-overview-bg p, .epoxy-mortar-bg p, .epoxy-paint-bg p { font-size: 16px; }
 }
