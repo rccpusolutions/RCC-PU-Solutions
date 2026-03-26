@@ -1,56 +1,29 @@
 /* ============================================================ */
-/* 1. RESET & GLOBAL STYLES */
+/* 1. GLOBAL & HEADER (LOCKED) */
 /* ============================================================ */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { height: 100%; font-family: Arial, sans-serif; line-height: 1.6; background-color: #f4f4f4; }
 
-body, html {
-    height: 100%;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-}
-
-/* ============================================================ */
-/* 2. FIXED HEADER & NAV (LOCKED) */
-/* ============================================================ */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background-color: #ffffff;
-    border-bottom: 2px solid #00a651;
-    position: fixed;
-    top: 0; left: 0; width: 100%;
-    z-index: 1000;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 20px; background-color: #ffffff; border-bottom: 2px solid #00a651;
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
 }
-
 body { padding-top: 80px; }
-
 .header-left { display: flex; align-items: center; }
 .header-left img { height: 50px; margin-right: 10px; }
 .company-name { font-size: 24px; font-weight: bold; color: #004d00; }
-
-nav a {
-    color: #00a651 !important;
-    text-decoration: none !important;
-    margin-left: 20px;
-    font-weight: bold;
-}
+nav a { color: #00a651 !important; text-decoration: none !important; margin-left: 20px; font-weight: bold; }
 
 /* ============================================================ */
-/* 3. HERO & BACKGROUND LOGIC (LOCKED) */
+/* 2. MAIN HERO & SECTIONS (ALL DEVICES) */
 /* ============================================================ */
 .home-main, .hero-section, .services-bg, .pu-overview-bg, 
 .company-bg, .mission-bg, .chooseus-bg, .coldstorage-bg, 
 .dressingplant-bg, .hatchery-bg, .epoxy-overview-bg, 
 .epoxy-mortar-bg, .epoxy-paint-bg {
     min-height: 80vh;
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -58,112 +31,79 @@ nav a {
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
+    background-attachment: scroll !important; /* Mas stable sa lahat ng device */
 }
 
-/* Overlays */
-.home-main::before, .hero-section::before, .services-bg::before, 
-.pu-overview-bg::before, .company-bg::before, .mission-bg::before, 
-.chooseus-bg::before, .coldstorage-bg::before, .dressingplant-bg::before, 
-.hatchery-bg::before, .epoxy-overview-bg::before, 
-.epoxy-mortar-bg::before, .epoxy-paint-bg::before {
-    content: "";
-    position: absolute;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.6);
-    top: 0; left: 0; z-index: 0;
+/* Dark Overlays */
+[class*="-bg"]::before, .home-main::before, .hero-section::before {
+    content: ""; position: absolute; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6); top: 0; left: 0; z-index: 0;
 }
 
-.hero-content { position: relative; z-index: 1; max-width: 900px; padding: 20px; }
+.hero-content { position: relative; z-index: 1; max-width: 900px; padding: 20px; width: 100%; }
 .hero-content h1 { font-size: 45px; margin-bottom: 20px; color: #00a651; font-weight: bold; }
 .hero-content p { font-size: 20px; margin-bottom: 30px; color: white !important; }
 
 /* ============================================================ */
-/* 4. BACKGROUND IMAGE ASSIGNMENTS (LOCKED) */
+/* 3. IMAGE MAPPING (FORCE LOAD) */
 /* ============================================================ */
 .home-main { background-image: url('home-bg.jpg') !important; }
 .services-bg { background-image: url('services-bg.jpg') !important; }
 .company-bg { background-image: url('company-bg.jpg') !important; }
 .mission-bg { background-image: url('mission-bg.jpg') !important; }
 .chooseus-bg { background-image: url('chooseus-bg.jpg') !important; }
+.pu-overview-bg { background-image: url('pu-overview-bg.jpg') !important; }
+.coldstorage-bg { background-image: url('coldstorage-bg.jpg') !important; }
+.dressingplant-bg { background-image: url('dressingplant-bg.jpg') !important; }
+.hatchery-bg { background-image: url('hatchery-bg.jpg') !important; }
+.epoxy-overview-bg { background-image: url('epoxy-overview-bg.jpg') !important; }
+.epoxy-mortar-bg { background-image: url('epoxy-mortar-bg.jpg') !important; }
+.epoxy-paint-bg { background-image: url('epoxy-paint-bg.jpg') !important; }
 
 /* ============================================================ */
-/* 5. WHY CHOOSE US - FIXED DESIGN (THE FIX) */
+/* 4. WHY CHOOSE US - MOBILE & DESKTOP FIXED */
 /* ============================================================ */
-/* Ito ang magbabalik sa green box/bar design */
-.chooseus-bg ul { 
-    list-style: none !important; 
-    padding: 0 !important; 
-    max-width: 700px !important; 
-    margin: 0 auto !important; 
-    display: block !important;
-}
+.chooseus-bg ul { list-style: none !important; padding: 0 !important; max-width: 700px !important; margin: 0 auto !important; }
 
 .chooseus-bg ul li {
     display: block !important;
     background-color: rgba(224, 242, 233, 0.95) !important;
-    margin: 12px 0 !important; 
-    padding: 18px 25px !important; 
-    border-radius: 5px !important;
-    font-weight: bold !important; 
+    margin: 12px 0 !important; padding: 18px 25px !important; border-radius: 5px !important;
+    font-weight: bold !important; color: #004d00 !important; text-align: left !important;
+    border-left: 10px solid #00a651 !important;
     font-size: 16px !important;
-    color: #004d00 !important;
-    text-align: left !important;
-    border-left: 8px solid #00a651 !important;
-    transition: 0.3s;
-}
-
-.chooseus-bg ul li:hover {
-    background-color: #ffffff !important;
-    transform: translateX(10px);
 }
 
 /* ============================================================ */
-/* 6. BUTTONS & BARS (LOCKED) */
+/* 5. BUTTONS & SERVICES BARS */
 /* ============================================================ */
 .button, a.button {
-    display: inline-block !important;
-    background-color: #00a651 !important;
-    color: white !important;
-    padding: 15px 35px !important;
-    border-radius: 5px !important;
-    text-decoration: none !important;
-    font-weight: bold !important;
-    border: none !important;
+    display: inline-block !important; background-color: #00a651 !important;
+    color: white !important; padding: 15px 35px !important; border-radius: 5px !important;
+    text-decoration: none !important; font-weight: bold !important;
 }
-
 .services-list-bar, a.services-list-bar {
-    display: block !important;
-    background-color: rgba(224, 242, 233, 0.95) !important;
-    color: #004d00 !important;
-    padding: 22px !important;
-    margin: 15px auto !important;
-    max-width: 550px;
-    text-decoration: none !important;
-    font-weight: bold !important;
-    border-left: 10px solid #00a651 !important;
-    border-radius: 5px !important;
+    display: block !important; background-color: rgba(224, 242, 233, 0.95) !important;
+    color: #004d00 !important; padding: 22px !important; margin: 15px auto !important;
+    max-width: 550px; text-decoration: none !important; font-weight: bold !important;
+    border-left: 10px solid #00a651 !important; border-radius: 5px !important;
 }
 
 /* ============================================================ */
-/* 7. FOOTER & MOBILE RESPONSIVENESS */
+/* 6. MOBILE FIXES (RE-RENDER) */
 /* ============================================================ */
-footer { text-align: center; padding: 30px; background-color: #00a651; color: white; }
-
 @media (max-width: 768px) {
     header { flex-direction: column; padding: 10px; }
     nav { margin-top: 10px; }
     nav a { margin: 0 10px; font-size: 14px; }
     body { padding-top: 130px; }
+    .hero-content h1 { font-size: 28px !important; }
+    .hero-content p { font-size: 16px !important; }
     
-    .hero-content h1 { font-size: 30px; }
-    .hero-content p { font-size: 16px; }
-
-    /* Force background on mobile */
-    .hero-section, .home-main, .chooseus-bg {
-        background-attachment: scroll !important;
-        background-size: cover !important;
-        background-position: center center !important;
-        min-height: 50vh !important;
-        display: flex !important;
+    /* Pinupuwersa ang background sa mobile */
+    .home-main, .hero-section, [class*="-bg"] { 
+        min-height: 400px !important; 
+        background-attachment: scroll !important; 
     }
 }
+footer { text-align: center; padding: 30px; background-color: #00a651; color: white; }
