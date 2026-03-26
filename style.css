@@ -147,8 +147,7 @@ nav a:hover {
     position: relative;
 }
 
-/* Background Image Assignments */
-/* Nilagyan natin ng !important para sigurado sa mobile */
+/* Background Assignments */
 .services-bg { background-image: url('services-bg.jpg') !important; }
 .company-bg { background-image: url('company-bg.jpg') !important; }
 .mission-bg { background-image: url('mission-bg.jpg') !important; }
@@ -164,7 +163,6 @@ nav a:hover {
 .wp-concrete-bg { background-image: url('wp-concrete-bg.jpg') !important; }
 .wp-roof-bg { background-image: url('wp-roof-bg.jpg') !important; }
 
-/* Global Background Settings para sa lahat ng sub-pages */
 .services-bg, .company-bg, .mission-bg, .chooseus-bg, 
 .overview-bg, .coldstorage-bg, .dressingplant-bg, .hatchery-bg,
 .epoxy-overview-bg, .epoxy-mortar-bg, .epoxy-paint-bg,
@@ -201,7 +199,6 @@ nav a:hover {
     z-index: 1;
 }
 
-/* White text for image backgrounds */
 .services-bg p, .company-bg p, .mission-bg p, .chooseus-bg p,
 .overview-bg p, .coldstorage-bg p, .dressingplant-bg p, .hatchery-bg p,
 .epoxy-overview-bg p, .epoxy-mortar-bg p, .epoxy-paint-bg p,
@@ -210,7 +207,30 @@ nav a:hover {
 }
 
 /* ======================== */
-/* 5. SERVICES BARS STYLE */
+/* 5. WHY CHOOSE US - FIXED LIST (LOCKED) */
+/* ======================== */
+/* Ibinalik natin ang dati mong design: Green bg at Dark Green text */
+.chooseus-bg ul {
+    list-style: none;
+    padding: 0;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.chooseus-bg ul li {
+    background-color: rgba(224, 242, 233, 0.9); /* Dati mong green bg */
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #004d00; /* Dati mong dark green text */
+}
+
+/* ======================== */
+/* 6. SERVICES BARS STYLE */
 /* ======================== */
 .services-list-bar {
     text-decoration: none;
@@ -234,7 +254,7 @@ nav a:hover {
 }
 
 /* ======================== */
-/* 6. FOOTER (LOCKED) */
+/* 7. FOOTER (LOCKED) */
 /* ======================== */
 footer {
     text-align: center;
@@ -244,7 +264,7 @@ footer {
 }
 
 /* ======================== */
-/* 7. MOBILE RESPONSIVENESS (LOCKED) */
+/* 8. MOBILE RESPONSIVENESS (LOCKED) */
 /* ======================== */
 @media (max-width: 768px) {
     header {
@@ -279,8 +299,7 @@ footer {
     .hero-content h1 { font-size: 28px; }
     .hero-content p { font-size: 16px; }
     
-    /* Siguraduhin na ang background ay mananatiling visible sa mobile */
     .hero-section {
-        background-attachment: scroll; /* Mas maayos ang performance sa mobile */
+        background-attachment: scroll;
     }
 }
