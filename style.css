@@ -132,9 +132,11 @@ nav a:hover {
 }
 
 /* ======================== */
-/* 4. COMMON HERO SECTIONS (LOCKED STYLE) */
+/* 4. COMMON HERO SECTIONS & SUB-PAGES (LOCKED STYLE) */
 /* ======================== */
-.hero-section {
+.hero-section, .overview-bg, .coldstorage-bg, .dressingplant-bg, .hatchery-bg, 
+.epoxy-overview-bg, .epoxy-mortar-bg, .epoxy-paint-bg,
+.wp-overview-bg, .wp-concrete-bg, .wp-roof-bg {
     min-height: 80vh;
     display: flex;
     justify-content: center;
@@ -149,24 +151,36 @@ nav a:hover {
     background-color: #f4f4f4;
 }
 
-/* Common Background Settings */
-.hero-section.company-bg, .hero-section.mission-bg, .hero-section.chooseus-bg,
+/* Background Image Common Settings */
+.company-bg, .mission-bg, .chooseus-bg, 
 .overview-bg, .coldstorage-bg, .dressingplant-bg, .hatchery-bg,
-.epoxy-overview-bg, .epoxy-mortar-bg, .epoxy-paint-bg {
+.epoxy-overview-bg, .epoxy-mortar-bg, .epoxy-paint-bg,
+.wp-overview-bg, .wp-concrete-bg, .wp-roof-bg {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* Background Images */
-.hero-section.company-bg { background-image: url('company-bg.jpg'); }
-.hero-section.mission-bg { background-image: url('mission-bg.jpg'); }
-.hero-section.chooseus-bg { background-image: url('chooseus-bg.jpg'); }
+/* Individual Image Assignments */
+.company-bg { background-image: url('company-bg.jpg'); }
+.mission-bg { background-image: url('mission-bg.jpg'); }
+.chooseus-bg { background-image: url('chooseus-bg.jpg'); }
+.overview-bg { background-image: url('overview-bg.jpg'); }
+.coldstorage-bg { background-image: url('coldstorage-bg.jpg'); }
+.dressingplant-bg { background-image: url('dressingplant-bg.jpg'); }
+.hatchery-bg { background-image: url('hatchery-bg.jpg'); }
+.epoxy-overview-bg { background-image: url('epoxy-overview-bg.jpg'); }
+.epoxy-mortar-bg { background-image: url('epoxy-mortar-bg.jpg'); }
+.epoxy-paint-bg { background-image: url('epoxy-paint-bg.jpg'); }
+.wp-overview-bg { background-image: url('wp-overview-bg.jpg'); }
+.wp-concrete-bg { background-image: url('wp-concrete-bg.jpg'); }
+.wp-roof-bg { background-image: url('wp-roof-bg.jpg'); }
 
-/* Overlay settings para sa images */
-.hero-section.company-bg::before, .hero-section.mission-bg::before, .hero-section.chooseus-bg::before,
+/* Overlay settings for all sub-sections with background */
+.company-bg::before, .mission-bg::before, .chooseus-bg::before,
 .overview-bg::before, .coldstorage-bg::before, .dressingplant-bg::before, .hatchery-bg::before,
-.epoxy-overview-bg::before, .epoxy-mortar-bg::before, .epoxy-paint-bg::before {
+.epoxy-overview-bg::before, .epoxy-mortar-bg::before, .epoxy-paint-bg::before,
+.wp-overview-bg::before, .wp-concrete-bg::before, .wp-roof-bg::before {
     content: "";
     position: absolute;
     width: 100%; height: 100%;
@@ -174,9 +188,8 @@ nav a:hover {
     top: 0; left: 0;
 }
 
-/* Common Header Style (Using your Green Color) */
-.hero-section h1, .overview-bg h1, .coldstorage-bg h1, .dressingplant-bg h1, .hatchery-bg h1,
-.epoxy-overview-bg h1, .epoxy-mortar-bg h1, .epoxy-paint-bg h1 {
+/* Header & Paragraph Common Rules */
+.hero-content h1 {
     font-size: 40px;
     margin-bottom: 20px;
     color: #00a651; 
@@ -184,19 +197,18 @@ nav a:hover {
     z-index: 1;
 }
 
-/* Common Paragraph Style */
-.hero-section p, .overview-bg p, .coldstorage-bg p, .dressingplant-bg p, .hatchery-bg p,
-.epoxy-overview-bg p, .epoxy-mortar-bg p, .epoxy-paint-bg p {
+.hero-content p {
     font-size: 20px;
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
 }
 
-/* Puti ang text kapag may overlay/background */
-.hero-section.company-bg p, .hero-section.mission-bg p, .hero-section.chooseus-bg p,
+/* White text for sections with backgrounds */
+.company-bg p, .mission-bg p, .chooseus-bg p,
 .overview-bg p, .coldstorage-bg p, .dressingplant-bg p, .hatchery-bg p,
-.epoxy-overview-bg p, .epoxy-mortar-bg p, .epoxy-paint-bg p {
+.epoxy-overview-bg p, .epoxy-mortar-bg p, .epoxy-paint-bg p,
+.wp-overview-bg p, .wp-concrete-bg p, .wp-roof-bg p {
     color: white;
 }
 
@@ -287,6 +299,6 @@ footer {
 
     .home-main h1 { font-size: 30px; }
     .home-main p { font-size: 16px; }
-    .hero-section h1, .overview-bg h1, .coldstorage-bg h1, .dressingplant-bg h1, .hatchery-bg h1, .epoxy-overview-bg h1, .epoxy-mortar-bg h1, .epoxy-paint-bg h1 { font-size: 28px; }
-    .hero-section p, .overview-bg p, .coldstorage-bg p, .dressingplant-bg p, .hatchery-bg p, .epoxy-overview-bg p, .epoxy-mortar-bg p, .epoxy-paint-bg p { font-size: 16px; }
+    .hero-content h1 { font-size: 28px; }
+    .hero-content p { font-size: 16px; }
 }
